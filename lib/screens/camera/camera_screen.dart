@@ -1,9 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:async';
-import 'dart:io';
-
 class CameraScreen extends StatefulWidget {
   final CameraDescription camera;
   CameraScreen({
@@ -16,15 +13,13 @@ class CameraScreen extends StatefulWidget {
 }
 
 class _CameraScreenState extends State<CameraScreen> {
-  // Add two variables to the state class to store the CameraController and
-  // the Future.
   CameraController _controller;
   Future<void> _initializeControllerFuture;
 
   @override
   void initState() {
     super.initState();
-    // To display the current output from the camera,
+    // To display the current output from the Camera,
     // create a CameraController.
     _controller = CameraController(
       // Get a specific camera from the list of available cameras.
@@ -33,15 +28,15 @@ class _CameraScreenState extends State<CameraScreen> {
       ResolutionPreset.medium,
     );
 
-    @override
-    void dispose() {
-      // Dispose of the controller when the widget is disposed.
-      _controller.dispose();
-      super.dispose();
-    }
-
     // Next, initialize the controller. This returns a Future.
     _initializeControllerFuture = _controller.initialize();
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the controller when the widget is disposed.
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -60,15 +55,11 @@ class _CameraScreenState extends State<CameraScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.keyboard_arrow_left),
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.transparent,
+        child: Icon(Icons.rotate_left),
         onPressed: () {
-          dispose();
           Navigator.pop(context);
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }
