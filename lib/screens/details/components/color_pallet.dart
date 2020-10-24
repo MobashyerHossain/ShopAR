@@ -23,7 +23,9 @@ class _ColorPalletState extends State<ColorPallet> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: widget.hasColor
             ? <Widget>[
-                Text("${this.widget.label} Color"),
+                Text(
+                  widget.label == '' ? "Color" : "${this.widget.label} Color",
+                ),
                 Row(
                   children: <Widget>[
                     ColorChoice(
@@ -118,10 +120,6 @@ class ColorDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-        top: kDefaultPaddin / 4,
-        right: kDefaultPaddin / 2,
-      ),
       padding: EdgeInsets.all(2.5),
       height: 24,
       width: 24,

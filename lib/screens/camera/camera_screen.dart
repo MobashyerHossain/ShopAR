@@ -42,17 +42,30 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder<void>(
-        future: _initializeControllerFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            // If the Future is complete, display the preview.
-            return CameraPreview(_controller);
-          } else {
-            // Otherwise, display a loading indicator.
-            return Center(child: CircularProgressIndicator());
-          }
-        },
+      body: Stack(
+        children: [
+          FutureBuilder<void>(
+            future: _initializeControllerFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                // If the Future is complete, display the preview.
+                return CameraPreview(_controller);
+              } else {
+                // Otherwise, display a loading indicator.
+                return Center(child: CircularProgressIndicator());
+              }
+            },
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+                height: 70,
+                child: FloatingActionButton(
+                  child: Icon(Icons.camera),
+                  onPressed: () {},
+                )),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
