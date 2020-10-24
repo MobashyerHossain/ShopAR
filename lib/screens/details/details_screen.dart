@@ -1,3 +1,5 @@
+import 'package:ShopAR/screens/camera/camera_screen.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ShopAR/models/Product.dart';
@@ -42,7 +44,25 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ),
         IconButton(
           icon: Icon(Icons.camera),
-          onPressed: () {},
+          onPressed: () async {
+            // can be called before `runApp()`
+            WidgetsFlutterBinding.ensureInitialized();
+
+            // Obtain a list of the available cameras on the device.
+            final cameras = await availableCameras();
+
+            // Get a specific camera from the list of available cameras.
+            final firstCamera = cameras.first;
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CameraScreen(
+                  camera: firstCamera,
+                ),
+              ),
+            );
+          },
         ),
         IconButton(
           icon: SvgPicture.asset("assets/icons/cart.svg"),
