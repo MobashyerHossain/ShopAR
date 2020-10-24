@@ -19,7 +19,7 @@ class ProductTitleWithImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(height: kDefaultPaddin),
+          SizedBox(height: kDefaultPaddin / 2),
           Text(
             "${product.shortInfo}",
             style: TextStyle(color: Colors.white),
@@ -32,23 +32,33 @@ class ProductTitleWithImage extends StatelessWidget {
                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Price\n",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    TextSpan(
-                      text: "\$${product.price}",
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 20,
+                ),
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Price\n",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      TextSpan(
+                        text: "\$${product.price}",
+                        style: Theme.of(context).textTheme.headline5.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(width: kDefaultPaddin),
+              SizedBox(
+                width: 30,
+              ),
               Expanded(
                 child: Hero(
                   tag: "${product.id}",

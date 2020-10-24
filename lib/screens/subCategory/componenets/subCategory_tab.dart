@@ -49,7 +49,7 @@ class SubCategoryTab extends StatelessWidget {
                       Text(
                         "Sorry!!!",
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                         ),
                       ),
                       SizedBox(
@@ -58,8 +58,11 @@ class SubCategoryTab extends StatelessWidget {
                       Text(
                         "${subCategory.title}'s Has Not Been Added Yet...",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                         ),
+                      ),
+                      SizedBox(
+                        height: 100,
                       ),
                     ],
                   ),
