@@ -25,52 +25,49 @@ class ProductDetailBody extends StatefulWidget {
 class _ProductDetailBodyState extends State<ProductDetailBody> {
   @override
   Widget build(BuildContext context) {
-    // It provide us total height and width
-    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Column(
+      child: Stack(
         children: <Widget>[
-          SizedBox(
-            height: size.height,
-            child: Stack(
+          Container(
+            // color: brighten(product.color),
+            margin: EdgeInsets.only(top: getDeviceSize(context).height * 0.3),
+            padding: EdgeInsets.only(
+              top: getDeviceSize(context).height * 0.7,
+              left: kDefaultPaddin,
+              right: kDefaultPaddin,
+            ),
+            // height: 500,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24),
+                topRight: Radius.circular(24),
+              ),
+            ),
+          ),
+          ProductTitleWithImage(
+            product: widget.product,
+            frameColor: widget.frameColor,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: getDeviceSize(context).height * 0.45),
+            padding: EdgeInsets.only(
+              left: kDefaultPaddin,
+              right: kDefaultPaddin,
+            ),
+            child: Column(
               children: <Widget>[
-                Container(
-                  // color: brighten(product.color),
-                  margin: EdgeInsets.only(top: size.height * 0.3),
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.12,
-                    left: kDefaultPaddin,
-                    right: kDefaultPaddin,
-                  ),
-                  // height: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                    ),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      ColorAndSize(
-                        product: widget.product,
-                      ),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      Description(product: widget.product),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      CounterWithFavBtn(),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      AddToCart(product: widget.product)
-                    ],
-                  ),
-                ),
-                ProductTitleWithImage(
+                ColorAndSize(
                   product: widget.product,
-                  frameColor: widget.frameColor,
-                )
+                ),
+                Description(product: widget.product),
+                SizedBox(height: kDefaultPaddin / 2),
+                CounterWithFavBtn(),
+                SizedBox(height: kDefaultPaddin / 2),
+                AddToCart(product: widget.product)
               ],
             ),
-          )
+          ),
         ],
       ),
     );

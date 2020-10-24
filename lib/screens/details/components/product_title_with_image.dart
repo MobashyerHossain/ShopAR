@@ -33,8 +33,9 @@ class ProductTitleWithImage extends StatelessWidget {
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Padding(
+              Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 20,
                 ),
@@ -56,15 +57,14 @@ class ProductTitleWithImage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: 30,
-              ),
-              Expanded(
+              Container(
+                width: getDeviceSize(context).width * .6,
+                color: Colors.black,
                 child: Hero(
                   tag: "${product.id}",
                   child: Image.asset(
                     product.image,
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               )

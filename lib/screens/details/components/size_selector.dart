@@ -26,7 +26,7 @@ class _SizeSelectorState extends State<SizeSelector> {
             ? <Widget>[
                 Text(widget.label == '' ? "Size" : "${widget.label} Size"),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     SizeChoice(
                       label: "S",

@@ -1,3 +1,4 @@
+import 'package:ShopAR/constants.dart';
 import 'package:ShopAR/screens/details/components/color_pallet.dart';
 import 'package:ShopAR/screens/details/components/size_selector.dart';
 import 'package:flutter/material.dart';
