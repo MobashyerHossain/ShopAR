@@ -55,11 +55,14 @@ class _CameraScreenState extends State<CameraScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.rotate_left),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+        child: Icon(Icons.keyboard_arrow_left),
         onPressed: () {
           Navigator.pop(context);
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }
