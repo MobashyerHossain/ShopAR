@@ -27,21 +27,20 @@ class _ProductDetailBodyState extends State<ProductDetailBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Stack(
+        // alignment: Alignment.bottomCenter,
         children: <Widget>[
-          Container(
-            // color: brighten(product.color),
-            margin: EdgeInsets.only(top: getDeviceSize(context).height * 0.3),
-            padding: EdgeInsets.only(
-              top: getDeviceSize(context).height * 0.7,
-              left: kDefaultPaddin,
-              right: kDefaultPaddin,
-            ),
-            // height: 500,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(24),
-                topRight: Radius.circular(24),
+          Positioned(
+            top: getDeviceSize(context).height * 0.3,
+            bottom: 0,
+            right: 0,
+            left: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
               ),
             ),
           ),

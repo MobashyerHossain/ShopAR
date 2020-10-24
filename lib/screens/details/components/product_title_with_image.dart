@@ -59,7 +59,6 @@ class ProductTitleWithImage extends StatelessWidget {
               ),
               Container(
                 width: getDeviceSize(context).width * .6,
-                color: Colors.black,
                 child: Hero(
                   tag: "${product.id}",
                   child: Image.asset(
