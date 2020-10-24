@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:ShopAR/models/SubCategory.dart';
-import 'package:ShopAR/screens/subs/componenets/subCategory_tab.dart';
+import 'package:ShopAR/screens/subCategory/componenets/subCategory_tab.dart';
 
 class SubCategoryBody extends StatefulWidget {
   final List<SubCategory> subCatList;

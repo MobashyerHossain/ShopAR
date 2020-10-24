@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ShopAR/constants.dart';
 import 'package:ShopAR/models/Category.dart';
 import 'package:ShopAR/screens/category/components/subCategory_card.dart';
-import 'package:ShopAR/screens/subs/subCategory_screen.dart';
+import 'package:ShopAR/screens/subCategory/subCategory_screen.dart';
 
 class CategoryBody extends StatelessWidget {
   const CategoryBody({Key key}) : super(key: key);

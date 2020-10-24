@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ShopAR/constants.dart';
 import 'package:ShopAR/models/Category.dart';
 import 'package:ShopAR/screens/category/components/main_menu.dart';
-import 'package:ShopAR/screens/subs/componenets/subCategory_body.dart';
+import 'package:ShopAR/screens/subCategory/componenets/subCategory_body.dart';
 
 class SubCatScreen extends StatefulWidget {
   final Category category;

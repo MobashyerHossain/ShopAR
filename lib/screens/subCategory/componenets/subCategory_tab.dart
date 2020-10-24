@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ShopAR/constants.dart';
 import 'package:ShopAR/models/SubCategory.dart';
 import 'package:ShopAR/screens/details/details_screen.dart';
-import 'package:ShopAR/screens/subs/componenets/product_card.dart';
-import 'package:ShopAR/screens/subs/componenets/tab_bar.dart';
+import 'package:ShopAR/screens/subCategory/componenets/product_card.dart';
+import 'package:ShopAR/screens/subCategory/componenets/tab_bar.dart';
 
 class SubCategoryTab extends StatelessWidget {
   final SubCategory subCategory;
