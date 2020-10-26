@@ -1,4 +1,3 @@
-import 'package:ShopAR/screens/camera/camera_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ShopAR/models/Product.dart';
@@ -43,14 +42,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ),
         IconButton(
           icon: Icon(Icons.camera),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CamOverlay(),
-              ),
-            );
-          },
+          onPressed: () {},
         ),
         IconButton(
           icon: SvgPicture.asset("assets/icons/cart.svg"),
