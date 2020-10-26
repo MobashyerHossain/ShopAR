@@ -1,40 +1,38 @@
+import 'dart:async';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-class CameraScreen extends StatefulWidget {
-  final CameraDescription camera;
-  CameraScreen({
-    Key key,
-    this.camera,
-  }) : super(key: key);
-
+class CamOverlay extends StatefulWidget {
   @override
-  _CameraScreenState createState() => _CameraScreenState();
+  _CamOverlayState createState() => _CamOverlayState();
 }
 
-class _CameraScreenState extends State<CameraScreen> {
+class _CamOverlayState extends State<CamOverlay> {
   CameraController _controller;
-  Future<void> _initializeControllerFuture;
+  Future<void> _initCamFuture;
 
   @override
   void initState() {
     super.initState();
-    // To display the current output from the Camera,
-    // create a CameraController.
+    _initApp();
+  }
+
+  _initApp() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    final cameras = await availableCameras();
+    final firstCam = cameras.first;
+
     _controller = CameraController(
-      // Get a specific camera from the list of available cameras.
-      widget.camera,
-      // Define the resolution to use.
+      firstCam,
       ResolutionPreset.medium,
     );
 
-    // Next, initialize the controller. This returns a Future.
-    _initializeControllerFuture = _controller.initialize();
+    _initCamFuture = _controller.initialize();
   }
 
   @override
   void dispose() {
-    // Dispose of the controller when the widget is disposed.
     _controller.dispose();
     super.dispose();
   }
@@ -42,40 +40,37 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          FutureBuilder<void>(
-            future: _initializeControllerFuture,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                // If the Future is complete, display the preview.
-                return CameraPreview(_controller);
-              } else {
-                // Otherwise, display a loading indicator.
-                return Center(child: CircularProgressIndicator());
-              }
-            },
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-                height: 70,
-                child: FloatingActionButton(
-                  child: Icon(Icons.camera),
-                  onPressed: () {},
-                )),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black,
-        child: Icon(Icons.keyboard_arrow_left),
-        onPressed: () {
-          Navigator.pop(context);
+      appBar: AppBar(title: Text("Camera Overylay")),
+      body: FutureBuilder<void>(
+        future: _initCamFuture,
+        builder: (context, snapshot) {
+          return Stack(
+            alignment: FractionalOffset.center,
+            children: <Widget>[
+              new Positioned.fill(
+                child: new AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: new CameraPreview(_controller)),
+              ),
+              new Positioned.fill(
+                child: new Opacity(
+                    opacity: 0.3,
+                    child: Container(
+                      height: 200.0,
+                      color: Colors.red,
+                      child: Center(
+                        child: Text("Inducesmile.com",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.white,
+                            )),
+                      ),
+                    )),
+              ),
+            ],
+          );
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }
