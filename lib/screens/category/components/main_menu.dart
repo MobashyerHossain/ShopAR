@@ -1,3 +1,5 @@
+import 'package:ShopAR/componenets/modified_flatButton.dart';
+import 'package:ShopAR/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ShopAR/screens/category/components/menu_option.dart';
 
@@ -48,37 +50,17 @@ class MainMenu extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            FlatButton(
-              onPressed: () {},
-              child: Container(
-                height: 40,
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(24),
-                    bottomRight: Radius.circular(24),
+            ModifiedFlatButton(
+              text: 'Log In',
+              width: double.infinity,
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LogInScreen(),
                   ),
-                  gradient: LinearGradient(
-                    colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                ),
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
+                );
+              },
             ),
             Expanded(
               child: Container(
