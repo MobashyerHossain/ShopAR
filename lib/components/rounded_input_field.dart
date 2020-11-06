@@ -1,33 +1,30 @@
-import 'package:ShopAR/componenets/text_field_container.dart';
+import 'package:ShopAR/components/text_field_container.dart';
 import 'package:ShopAR/constants.dart';
 import 'package:flutter/material.dart';
 
-class RoundedPasswordField extends StatelessWidget {
-  final ValueChanged<String> onChanged;
+class RoundedInputField extends StatelessWidget {
   final String placeholder;
-  const RoundedPasswordField({
+  final IconData icon;
+  final ValueChanged<String> onChanged;
+  const RoundedInputField({
     Key key,
-    this.onChanged,
     this.placeholder,
+    this.icon = Icons.person,
+    this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
-        obscureText: true,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
-          hintText: placeholder,
           icon: Icon(
-            Icons.lock,
+            icon,
             color: kPrimaryColor,
           ),
-          suffixIcon: Icon(
-            Icons.visibility,
-            color: kPrimaryColor,
-          ),
+          hintText: placeholder,
           border: InputBorder.none,
         ),
       ),

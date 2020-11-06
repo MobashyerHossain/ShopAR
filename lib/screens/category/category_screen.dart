@@ -1,9 +1,8 @@
+import 'package:ShopAR/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ShopAR/screens/category/components/category_body.dart';
-import 'package:ShopAR/screens/category/components/main_menu.dart';
-
-import '../../constants.dart';
+import 'package:ShopAR/screens/category/components/sideBar.dart';
 
 class CategoryScreen extends StatefulWidget {
   @override
@@ -20,7 +19,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       appBar: buildAppBar(_scaffoldKey),
       endDrawerEnableOpenDragGesture: true,
       drawerEnableOpenDragGesture: true,
-      drawer: MainMenu(),
+      drawer: SideBar(),
       body: Container(
         padding: EdgeInsets.only(top: 10),
         child: Column(

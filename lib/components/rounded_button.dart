@@ -26,7 +26,6 @@ class RoundedButton extends StatelessWidget {
         ),
       ),
       child: FlatButton(
-        // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         color: color,
         onPressed: press,
         child: Text(

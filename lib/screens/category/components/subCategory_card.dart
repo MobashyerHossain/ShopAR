@@ -1,7 +1,6 @@
+import 'package:ShopAR/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:ShopAR/models/Category.dart';
-
-import '../../../constants.dart';
 
 class SubCategoryCard extends StatelessWidget {
   final Category category;

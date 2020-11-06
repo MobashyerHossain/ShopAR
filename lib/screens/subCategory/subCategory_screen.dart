@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ShopAR/constants.dart';
 import 'package:ShopAR/models/Category.dart';
-import 'package:ShopAR/screens/category/components/main_menu.dart';
+import 'package:ShopAR/screens/category/components/sideBar.dart';
 import 'package:ShopAR/screens/subCategory/componenets/subCategory_body.dart';
 
 class SubCatScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _SubCatScreenState extends State<SubCatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      drawer: MainMenu(),
+      drawer: SideBar(),
       body: Container(
         padding: EdgeInsets.only(top: 10),
         child: Column(

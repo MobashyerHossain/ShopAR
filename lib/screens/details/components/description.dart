@@ -1,7 +1,6 @@
+import 'package:ShopAR/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:ShopAR/models/Product.dart';
-
-import '../../../constants.dart';
 
 class Description extends StatelessWidget {
   const Description({

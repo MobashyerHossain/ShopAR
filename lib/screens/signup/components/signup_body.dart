@@ -1,7 +1,7 @@
-import 'package:ShopAR/componenets/account_check.dart';
-import 'package:ShopAR/componenets/modified_flatButton.dart';
-import 'package:ShopAR/componenets/rounded_input_field.dart';
-import 'package:ShopAR/componenets/rounded_password_field.dart';
+import 'package:ShopAR/components/account_check.dart';
+import 'package:ShopAR/components/modified_flatButton.dart';
+import 'package:ShopAR/components/rounded_input_field.dart';
+import 'package:ShopAR/components/rounded_password_field.dart';
 import 'package:ShopAR/screens/signup/components/signup_background.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +49,7 @@ class SignUpBody extends StatelessWidget {
             ),
             ModifiedFlatButton(
               width: size.width * .5,
-              text: "LogIn",
+              text: "Sign Up",
               press: () {},
             ),
             ModifiedFlatButton(

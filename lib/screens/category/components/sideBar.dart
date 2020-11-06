@@ -1,10 +1,10 @@
-import 'package:ShopAR/componenets/modified_flatButton.dart';
+import 'package:ShopAR/components/modified_flatButton.dart';
 import 'package:ShopAR/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ShopAR/screens/category/components/menu_option.dart';
 
-class MainMenu extends StatelessWidget {
-  const MainMenu({
+class SideBar extends StatelessWidget {
+  const SideBar({
     Key key,
   }) : super(key: key);
 
