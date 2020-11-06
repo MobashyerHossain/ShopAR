@@ -1,12 +1,14 @@
+import 'package:ShopAR/componenets/text_field_container.dart';
 import 'package:ShopAR/constants.dart';
-import 'package:ShopAR/screens/login/components/text_field_container.dart';
 import 'package:flutter/material.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final String placeholder;
   const RoundedPasswordField({
     Key key,
     this.onChanged,
+    this.placeholder,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class RoundedPasswordField extends StatelessWidget {
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
-          hintText: "Password",
+          hintText: placeholder,
           icon: Icon(
             Icons.lock,
             color: kPrimaryColor,

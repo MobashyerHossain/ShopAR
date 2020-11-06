@@ -1,14 +1,14 @@
+import 'package:ShopAR/componenets/text_field_container.dart';
 import 'package:ShopAR/constants.dart';
-import 'package:ShopAR/screens/login/components/text_field_container.dart';
 import 'package:flutter/material.dart';
 
 class RoundedInputField extends StatelessWidget {
-  final String hintText;
+  final String placeholder;
   final IconData icon;
   final ValueChanged<String> onChanged;
   const RoundedInputField({
     Key key,
-    this.hintText,
+    this.placeholder,
     this.icon = Icons.person,
     this.onChanged,
   }) : super(key: key);
@@ -24,7 +24,7 @@ class RoundedInputField extends StatelessWidget {
             icon,
             color: kPrimaryColor,
           ),
-          hintText: hintText,
+          hintText: placeholder,
           border: InputBorder.none,
         ),
       ),
