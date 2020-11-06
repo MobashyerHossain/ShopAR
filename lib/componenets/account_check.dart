@@ -1,10 +1,10 @@
 import 'package:ShopAR/constants.dart';
 import 'package:flutter/material.dart';
 
-class AlreadyHaveAnAccountCheck extends StatelessWidget {
+class AccountCheck extends StatelessWidget {
   final bool login;
   final Function press;
-  const AlreadyHaveAnAccountCheck({
+  const AccountCheck({
     Key key,
     this.login = true,
     this.press,

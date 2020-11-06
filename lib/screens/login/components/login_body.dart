@@ -1,4 +1,4 @@
-import 'package:ShopAR/componenets/already_have_an_account_acheck.dart';
+import 'package:ShopAR/componenets/account_check.dart';
 import 'package:ShopAR/componenets/modified_flatButton.dart';
 import 'package:ShopAR/componenets/rounded_input_field.dart';
 import 'package:ShopAR/componenets/rounded_password_field.dart';
@@ -55,7 +55,7 @@ class LoginBody extends StatelessWidget {
             SizedBox(
               height: size.height * 0.03,
             ),
-            AlreadyHaveAnAccountCheck(
+            AccountCheck(
               login: true,
               press: () {
                 Navigator.push(
